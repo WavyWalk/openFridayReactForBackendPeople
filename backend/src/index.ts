@@ -8,9 +8,9 @@ const app = express();
 
 app.use(cors())
 
-// app.get('/products/:productId', getProductHandler)
-//
-// app.get('/products', getAllProductsHandler)
+app.get('/products/:productId', getProductHandler)
+
+app.get('/products', getAllProductsHandler)
 
 app.listen(PORT, () => {
     console.log(`Server listening on ${PORT}`);
