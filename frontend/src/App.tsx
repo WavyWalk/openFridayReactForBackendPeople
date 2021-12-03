@@ -41,8 +41,14 @@ function App() {
 
     const product = useFetchProduct()
 
+    const [productName, setProductName] = useState('')
+
   return (
     <div>
+        <input type="text" onChange={(e) => {setProductName(e.target.value)}} value={productName}/>
+        <h1>{productName}</h1>
+
+        <h1>Fetched Product</h1>
         {!product && <h1>LOADING</h1>}
         {product && <ShowProduct product={product}/>}
     </div>
