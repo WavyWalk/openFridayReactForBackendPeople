@@ -23,8 +23,7 @@ class ProductClient {
     }
 }
 
-function App() {
-
+const useFetchProduct = () => {
     const [product, setProduct] = useState<Product>()
 
     useEffect(() => {
@@ -33,6 +32,14 @@ function App() {
             setProduct(responseProduct)
         })()
     }, [])
+
+    return product
+}
+
+
+function App() {
+
+    const product = useFetchProduct()
 
   return (
     <div>
